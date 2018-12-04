@@ -1,21 +1,21 @@
 pragma solidity ^0.4.24;
 
-import "./ERC20.sol";
+import "./ERC721.sol";
 import "../../access/roles/MinterRole.sol";
 
 /**
- * @title ERC20Mintable
- * @dev ERC20 minting logic
+ * @title ERC721Mintable
+ * @dev ERC721 minting logic
  */
-contract ERC20Mintable is ERC20, MinterRole {
+contract ERC721Mintable is ERC721, MinterRole {
     /**
      * @dev Function to mint tokens
      * @param to The address that will receive the minted tokens.
-     * @param value The amount of tokens to mint.
+     * @param tokenId The token id to mint.
      * @return A boolean that indicates if the operation was successful.
      */
-    function mint(address to, uint256 value) public onlyMinter returns (bool) {
-        _mint(to, value);
+    function mint(address to, uint256 tokenId) public onlyMinter returns (bool) {
+        _mint(to, tokenId);
         return true;
     }
 }
