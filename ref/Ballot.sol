@@ -1,7 +1,7 @@
 pragma solidity ^0.4.24;
 
-// Reference, do not compile
-/// @title Voting with delegation. (pulled from solidity by example)
+// Reference (pulled from solidity by example)
+/// @title Voting with delegation. 
 contract Ballot {
     // This declares a new complex type which will
     // be used for variables later.
