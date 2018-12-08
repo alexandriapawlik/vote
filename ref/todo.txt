@@ -1,0 +1,6 @@
+To do:
+
+create contract to tally votes and announce winner
+create simple interface
+test/compile example voting contract from solidity by example
+create test contracts
