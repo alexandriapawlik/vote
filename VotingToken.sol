@@ -9,20 +9,25 @@ contract VotingToken is ERC721, Voter
 {
     using SafeMath for uint256;
 
-    constructor() private 
-    {
-        symbol = "VOTE";
-        name = "Voting Token";
-        allSupply = 0;
+    // use as index
+    uint allSupply = 0;
+
+    struct Vote {  // to be linked to token
+        uint election;   // index of the election to be used in
+        uint voterID;  // index of voter who cast it
+        uint tokenID;
     }
 
+    // link voter ID to vote
+    mapping(uint => Vote) public voterToVote;
+
     // creates a new voting token for specified voter ID
-    function _createNewToken(uint _voterID) private 
+    function _createToken(uint _voterID, uint _election) private onlyOwner
     {
         require(voters[_voterID].numTokens == 0, "Voter already has a token.");
 
-        // link token ID to voter ID
-        tokenToVoter[allSupply] == _voterID;
+        // link voter ID to vote
+        voterToVote[_voterID] = Vote(_election, _voterID, allSupply);
         // increment token supply
         allSupply++;
     }

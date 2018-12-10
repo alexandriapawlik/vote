@@ -4,3 +4,12 @@ create contract to tally votes and announce winner
 create simple interface
 test/compile example voting contract from solidity by example
 create test contracts
+
+fix:
+only allow 1 token per proposal
+    currently voters can only perticipate in one vote at a time
+identity checking (linking identity to address)
+eliminate ability to transfer token
+add events
+control permissions for adding votes
+    currently createToken and createElection are onlyOwner

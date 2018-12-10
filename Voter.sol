@@ -4,13 +4,9 @@ import "math/SafeMath.sol";
 import "utils/Ownable.sol";
 
 // defines functions and data for voters
-contract Voter is Ownable 
+contract Voter is Ownable
 {
-   
-    // event NewTokenForVoter(uint tokenID, uint voterID);
-
-    // links token ID to voter ID
-    mapping (uint => uint) private tokenToVoter;
+    
     // links address to voter ID
     mapping (address => uint) private addressToVoter;
     // links address to number of voter IDs, should only ever be one
