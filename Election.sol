@@ -123,3 +123,5 @@ contract Ballot is VotingToken
         winnerName_ = proposals[winningProposal()].name;
     }
 }
+
+//
