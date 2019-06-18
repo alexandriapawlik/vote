@@ -1,3 +1,5 @@
+// adapted from https://solidity.readthedocs.io/en/v0.5.6/solidity-by-example.html#voting
+
 pragma solidity ^0.4.24;
 
 import "./VotingToken.sol";
